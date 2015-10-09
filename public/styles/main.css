@@ -1,3 +1,5 @@
+/********* Resets *********/
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,18 +7,53 @@
 	box-sizing: border-box;
 }
 
+body {
+	font-family: 'Roboto Slab', serif;
+	background: #f6f6f6;
+}
 
+/********* Global Styles *********/
 
 header {
+	width: 100%;
 	background: orange;
 	padding: 4%;
 }
-
 
 #brand-logo {
 	width: 20%;
 }
 
 #brand-logo:hover {
-	width: 20.5%;
+	width: 20.2%;
+}
+
+/********* Not sure what to call this yet *********/
+
+#welcome-user {
+	display: inline-block;
+	position: absolute;
+	top: 22%;
+	left: 75%;
+	text-transform: capitalize;
+	font-weight: lighter;
+	letter-spacing: .3em;
+}
+
+#welcome-user span {
+	font-weight: bolder;
+	letter-spacing: .2em;
+}
+
+#logout {
+	position: absolute;
+	top: 2%;
+	left: 90%;
+	font-size: .75rem;
+	border-bottom: solid 1px white;
+	padding: 0 5px 5px 2px;
+	font-weight: lighter;
+	font-style: italic;
+	color: white;
+	border-radius: 5%
 }
