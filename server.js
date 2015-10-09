@@ -14,7 +14,7 @@ var express = require('express'),
 
 
 
-	server.get('/', function(req, res){
+	server.get('/this-is-just-a-secret/', function(req, res){
 		res.write("Welcome, friend!");
 		res.end();
 	});
