@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+
+
+header {
+	background: orange;
+	padding: 4%;
+}
+
+
+#brand-logo {
+	width: 20%;
+}
+
+#brand-logo:hover {
+	width: 20.5%;
+}

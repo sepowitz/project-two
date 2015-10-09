@@ -8,7 +8,7 @@ var express 				= require('express'),
 		mongoose 				= require('mongoose');
 
 //Core dependencies
-var bodyParser 			= require('body-paser'),
+var bodyParser 			= require('body-parser'),
 		ejs							= require('ejs'),
 		expressLayouts	= require('express-ejs-layouts'),
 		methodOverride	= require('method-override'),
@@ -49,7 +49,8 @@ server.use(expressLayouts);
 
 //Include controllers here
 
-
+var userController = require('./controllers/user_controller.js');
+server.use('/users', userController);
 
 
 
