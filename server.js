@@ -39,12 +39,12 @@ server.use(methodOverride('_method'));
 server.use(expressLayouts);
 
 
-//------------------ THIS IS JUST A TEST -----------------------//
-	server.get('/this-is-just-a-secret/', function(req, res){
-		res.write("Welcome, friend!");
-		res.end();
-	});
-//-------------------------------------------------------------//
+// //------------------ THIS IS JUST A TEST -----------------------//
+// 	server.get('/this-is-just-a-secret/', function(req, res){
+// 		res.write("Welcome, friend!");
+// 		res.end();
+// 	});
+// //-------------------------------------------------------------//
 
 
 //Include controllers here
