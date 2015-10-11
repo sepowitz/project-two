@@ -21,7 +21,7 @@ router.post('/', function(req, res){
 		if(err){
 			console.log('Trouble adding new user' + err);
 		} else {
-			res.redirect(301, "")
+			res.redirect(301, "users/login")
 		}
 
 	});
@@ -34,15 +34,15 @@ router.get('/login', function(req, res){
 });
 
 
-router.post('//This needs to match user login Action', function(req, res){
+router.post('/login', function(req, res){
 	var attempt = req.body.user;
 
 	User.findOne({username: attempt.username }, function(err, user){
 		if(user && user.password === attempt.password){
-			req.session.currentUser = user.username;
-			res.redirect(301, "/topics/")
+			req.session.currentUser = user;
+			res.redirect(301, "/")
 		} else {
-
+			res.redirect(301, "users/login")
 		}
 	});
 });

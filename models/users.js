@@ -4,8 +4,7 @@ var mongoose = require('mongoose'),
 //This user model 
 var userSchema = new Schema({
 	username: {type: String, required: true},
-	password: {type: String, required: true},
-	posts: [{type: Schema.Types.ObjectId, ref: 'Topic' }],
+	password: {type: String, required: true}
 }, {collection: 'users', strict: true}); 
 
 

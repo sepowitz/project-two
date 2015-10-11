@@ -10,7 +10,9 @@ var express = require('express'),
 //Show all topics
 router.get('/', function(req, res){
 	console.log(req.session);
-	res.render('topics/index');
+	res.render('topics/index', {
+		currentUser: req.session.currentUser
+	});
 });
 
 
@@ -19,7 +21,7 @@ router.get('/', function(req, res){
 /*SHOW*/
 
 //Show topic and related posts
-router.get('/:id', function(req, res){
+router.get('/:topicId', function(req, res){
 
 });
 
@@ -33,7 +35,7 @@ router.post('/', function(req, res){
 });
 
 //Create new post
-router.post('/:id/', function(req, res){
+router.post('/:topicId/', function(req, res){
 
 });
 
@@ -42,13 +44,13 @@ router.post('/:id/', function(req, res){
 /* EDIT */
 
 //Edit topic 
-router.patch('/:id/edit', function(req, res){
+router.patch('/:topicId/edit', function(req, res){
 
 });
 
 //Edit post
 
-router.patch('/:id/post/:id/edit', function(req, res){
+router.patch('/:topicId/post/:postId/edit', function(req, res){
 
 });
 
@@ -62,19 +64,19 @@ router.get('/new', function(req, res){
 });
 
 //Add new post
-router.get('/:id/new_post')
+router.get('/:topicId/new_post')
 
 
 
 /* DESTROY*/
 
 //Remove topic 
-router.delete('/:id', function(req, res){
+router.delete('/:topicId', function(req, res){
 
 });
 
 //Remove post
-router.delete('/:id/post/:id', function(req, res){
+router.delete('/:topicId/post/:postId', function(req, res){
 
 
 });

@@ -42,8 +42,8 @@ object:hover {
 
 #welcome-user {
 	display: inline-block;
-	position: absolute;
-	top: 22%;
+	position: fixed;
+	top: 10%;
 	left: 75%;
 	text-transform: capitalize;
 	font-weight: lighter;
@@ -57,7 +57,7 @@ object:hover {
 
 #logout {
 	position: absolute;
-	top: 2%;
+	top: 10%;
 	left: 90%;
 	font-size: .75rem;
 	border-bottom: solid 1px white;
