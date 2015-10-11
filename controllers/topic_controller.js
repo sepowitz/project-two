@@ -9,7 +9,8 @@ var express = require('express'),
 
 //Show all topics
 router.get('/', function(req, res){
-
+	console.log(req.session);
+	res.render('topics/index');
 });
 
 
@@ -56,7 +57,6 @@ router.patch('/:id/post/:id/edit', function(req, res){
 /* NEW */
 
 //Add new topic
-
 router.get('/new', function(req, res){
 
 });
@@ -80,5 +80,5 @@ router.delete('/:id/post/:id', function(req, res){
 });
 
 
-
+//Export router object
 module.exports = router;

@@ -23,20 +23,30 @@ server.set('view engine', 'ejs');
 //Connect MongoDB database
 mongoose.connect(MONGOURI + '/' + dbname);
 
-//Setup public route
+//Set up user login and authentication
+server.use(session({
+	secret: "bitchbetterhavemymoney",
+	resave: true,
+	saveUninitialized: false
+}));
+
+//Set up public route
 server.use(express.static('./public'));
 
-//Setup logger -- dev mode
+//Set up logger -- dev mode
 server.use(morgan('dev'));
 
-//Setup form data retrieval
-server.use(bodyParser.urlencoded({extended: true}));
+//Set up form data retrieval
+server.use(bodyParser.urlencoded({
+	extended: true
+}));
 
-//Setup RESTful route methods
+//Set up RESTful route methods
 server.use(methodOverride('_method'));
 
-//Setup templating engine master layout
+//Set up templating engine master layout
 server.use(expressLayouts);
+
 
 
 // //------------------ THIS IS JUST A TEST -----------------------//
@@ -52,6 +62,8 @@ server.use(expressLayouts);
 var userController = require('./controllers/user_controller.js');
 server.use('/users', userController);
 
+var topicController = require('./controllers/topic_controller.js');
+server.use('/', topicController);
 
 
 	
