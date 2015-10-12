@@ -1,0 +1,16 @@
+<h6 id="logout">log out</h6>
+<h5 id="welcome-user">watup, <span> <%= currentUser.username %></span> </h5>
+
+<div id="add-topic">
+	<form action ='/' method='post'>
+		<label>add a topic</label>
+		<input  type = "text"
+				 		name = "topic[topic]"
+				 		placeholder = "what would you like to talk about?">
+		<label>description</label>
+		<input  type = "text"
+				 		name = "topic[description]"
+				 		placeholder = "give us a brief description">
+		<input type="submit" value="add topic">
+	</form>
+</div>

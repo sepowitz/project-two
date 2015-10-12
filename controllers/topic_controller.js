@@ -8,14 +8,30 @@ var express = require('express'),
 /*INDEX*/ 
 
 //Show all topics
-router.get('/', function(req, res){
-	console.log(req.session);
-	res.render('topics/index', {
+router.get('/', function (req, res){
+	Topic.find({}, function(err, topic){
+		if(err){
+			console.log('There was a problem finding topics' + err)
+		} else {
+			res.render('topics/index', {
+			topic: topic,
+			currentUser: req.session.currentUser
+		});
+	}
+})
+});
+
+/* NEW */
+
+//Add new topic
+router.get('/new', function(req, res){
+	res.render('topics/new', {
 		currentUser: req.session.currentUser
 	});
 });
 
-
+//Add new post
+router.get('/:topicId/new_post')
 
 
 /*SHOW*/
@@ -31,7 +47,15 @@ router.get('/:topicId', function(req, res){
 
 //Create new topic
 router.post('/', function(req, res){
+	var newTopic = Topic(req.body.topic);
 
+	newTopic.save(function(err, newTopicAdded){
+		if(err){
+			console.log('Trouble adding new topic' + err);
+		} else {
+			res.redirect(302, "/")
+		}
+	});
 });
 
 //Create new post
@@ -54,17 +78,6 @@ router.patch('/:topicId/post/:postId/edit', function(req, res){
 
 });
 
-
-
-/* NEW */
-
-//Add new topic
-router.get('/new', function(req, res){
-
-});
-
-//Add new post
-router.get('/:topicId/new_post')
 
 
 

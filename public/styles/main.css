@@ -164,19 +164,6 @@ input[type="submit"]:hover {
 display: inline-block;
 }
 
-#add-topic-button {
-font-family: 'Roboto', serif;
-display: inline-block;
-margin: 5% 2%;
-background:none!important;
-text-align: left;
-padding: 5px 10px 5px 10px;
-font-weight: lighter;
-color: black !important;
-text-transform: uppercase;
-box-shadow: 2px 3px 5px gray !important;
-}
-
 #topic-grid ul li {
 font-family: 'Roboto', serif;
 display: inline-block;
@@ -211,6 +198,7 @@ box-shadow: 1px 1px 5px black;
 font-family: 'Roboto', serif;
 display: inline-block;
 margin: 5% 2%;
+width: 150px;
 background:none;
 border: solid 1px white;
 text-align: left;
@@ -236,8 +224,21 @@ border: solid 1px black;
 }
 
 
+/********* New Topic *********/
 
+#add-topic {
+	width: 400px;
+	padding: 50px 50px 50px 50px;
+	margin: 0 auto;
+	margin-top: 10%;
+}
 
+#add-topic input[type='submit'] {
+	width: 300px;
+}
 
+a {
+ text-decoration: none;
+}
 
 
