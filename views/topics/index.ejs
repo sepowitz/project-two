@@ -5,7 +5,7 @@
 	<ul>
 		<a href='/new'<li id="add-topic-button">add a topic<span class='plus-sign'>+</span></li></a>
 		<% topic.forEach(function(topic, i) {%>
-		<li><%=topic.topic%><span class='topic-count'><%= topic.posts.length %></span></li>
+		<a href='/<%= topic._id %>'><li><%=topic.topic%><span class='topic-count'><%= topic.posts.length %></span></li></a>
 		<%})%>
 	</ul>
 </div> 

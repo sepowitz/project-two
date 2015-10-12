@@ -38,7 +38,16 @@ router.get('/:topicId/new_post')
 
 //Show topic and related posts
 router.get('/:topicId', function(req, res){
-
+	Topic.findById(req.params.topicId, function(err, chosenTopic){
+		if (err){
+			console.log('there was a problem displaying the chose topic page' + err)
+		} else {
+			res.render('topics/show', {
+				currentUser: req.session.currentUser,
+				topic: chosenTopic
+			})
+		}
+	})
 });
 
 

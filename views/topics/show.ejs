@@ -1,0 +1,11 @@
+<h6 id="logout">log out</h6>
+<h5 id="welcome-user">watup, <span> <%= currentUser.username %></span> </h5>
+
+<!-- Current topic title and description -->
+<div id='show-topic'>
+	<h1><%=topic.topic%></h1>
+	<p><%=topic.description%></p>
+</div>
+
+<!-- This button takes users to add an entry within the specified topic -->
+<a href='/<%= topic._id %>/new_post'<div id='add-post'>add an entry about <%=topic.topic%><span>+</span></div>
