@@ -9,7 +9,7 @@
 
 body {
 	font-family: 'Roboto Slab', serif;
-	background: #f6f6f6;
+	background: #858585;
 	position: relative;
 }
 
@@ -17,7 +17,7 @@ body {
 
 header {
 	width: 100%;
-	background: #A6FEFF;
+	background: black;
 	padding: 4%;
 }
 
@@ -40,24 +40,10 @@ object:hover {
 
 /********* Not sure what to call this yet *********/
 
-#welcome-user {
-	display: inline-block;
-	position: fixed;
-	top: 10%;
-	left: 75%;
-	text-transform: capitalize;
-	font-weight: lighter;
-	letter-spacing: .3em;
-}
-
-#welcome-user span {
-	font-weight: bolder;
-	letter-spacing: .2em;
-}
 
 #logout {
-	position: absolute;
-	top: 10%;
+	position: fixed;
+	top: 5%;
 	left: 90%;
 	font-size: .75rem;
 	border-bottom: solid 1px white;
@@ -134,6 +120,113 @@ input[type="submit"]:hover {
 	color: white;
 	font-family: inherit;
 }
+
+
+/********* Current User Greeting *********/
+#welcome-user {
+	display: inline-block;
+	position: fixed;
+	top: 10%;
+	left: 75%;
+	text-transform: capitalize;
+	font-weight: lighter;
+	letter-spacing: .3em;
+	color: white;
+}
+
+#welcome-user span {
+	font-weight: bolder;
+	letter-spacing: .2em;
+}
+
+
+/********* Topic index *********/
+
+#topic-grid {
+	width: 50%;
+	margin: 10%	auto;
+	text-align: center;
+	position: relative;
+}
+
+#topic-grid ul {
+display: inline-block;
+}
+
+#add-topic-button {
+font-family: 'Roboto', serif;
+display: inline-block;
+margin: 5% 2%;
+background:none!important;
+text-align: left;
+padding: 5px 10px 5px 10px;
+font-weight: lighter;
+color: black !important;
+text-transform: uppercase;
+box-shadow: 2px 3px 5px gray !important;
+}
+
+#topic-grid ul li {
+font-family: 'Roboto', serif;
+display: inline-block;
+margin: 5% 2%;
+background: white;
+text-align: left;
+padding: 5px 10px 5px 10px;
+font-weight: lighter;
+color: black;
+text-transform: uppercase;
+box-shadow: 1px 1px 2px #E8E8E8;
+transition: .5s;
+}
+
+
+#topic-grid ul li:hover {
+background: black;
+color: white;
+box-shadow: 1px 1px 5px black;
+}
+
+.topic-count {
+	text-align: right;
+	margin-left:10px;
+	color: #b2b2b2;
+	font-weight: 800;
+	padding-left: 10px;
+	display: inline-block;
+}
+
+#add-topic-button {
+font-family: 'Roboto', serif;
+display: inline-block;
+margin: 5% 2%;
+background:none;
+border: solid 1px white;
+text-align: left;
+color: white !important;
+padding: 5px 10px 5px 10px;
+font-weight: lighter;
+text-transform: uppercase;
+}
+
+.plus-sign {
+	text-align: right;
+	margin-left:10px;
+	color: white;
+	font-weight: 800;
+	padding-left: 10px;
+	display: inline-block;
+}
+
+#add-topic-button:hover {
+background: black !important;
+border: solid 1px black;
+
+}
+
+
+
+
 
 
 

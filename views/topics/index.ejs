@@ -1,2 +1,30 @@
 <h6 id="logout">log out</h6>
-<h5 id="welcome-user">welcome, <span> <%= currentUser.username %></span> </h5>
+<h5 id="welcome-user">watup, <span> <%= currentUser.username %></span> </h5>
+
+<div id="topic-grid">
+	<ul>
+		<li id="add-topic-button">add a topic<span class='plus-sign'>+</span></li>
+		<li>programming<span class='topic-count'>10</span></li>
+		<li>cooking<span class='topic-count'>5</span></li>
+		<li>dogs<span class='topic-count'>10</span></li>
+		<li>tattoos<span class='topic-count'>3</span></li>
+		<li>meditation<span class='topic-count'>4</span></li>
+		<li>bugs<span class='topic-count'>1</span></li>
+		<li>design<span class='topic-count'>0</span></li>
+		<li>skateboarding<span class='topic-count'>10</span></li>
+		<li>hip hop<span class='topic-count'>15</span></li>
+		<li>fashion<span class='topic-count'>18</span></li>
+		<li>soup<span class='topic-count'>6</span></li>
+		<li>pie<span class='topic-count'>7</span></li>
+		<li>turtles<span class='topic-count'>1</span></li>
+	</ul>
+</div>
+
+<!-- <div id="topic-grid">
+	<ul>
+		<li id="add-topic-button">add a topic<span class='plus-sign'>+</span></li>
+		<%topics.forEach(){%>
+		<li><%=topic.title%><span class='topic-count'>topic.post.length</span></li>
+		<%}%>
+	</ul>
+</div> -->
