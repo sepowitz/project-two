@@ -68,12 +68,25 @@ object:hover {
 #sign-up-button {
 	display: inline-block;
 	margin-left: 30%;
-	border-bottom: solid 1px;
 	padding: 5px;
 	font-size: .8em;
 	text-transform: uppercase;
 }
 
+#sign-up-button:hover{
+	font-weight: bold;
+}
+
+#sign-up-button a {
+	text-decoration: none;
+	color: black;
+	transition: 1s ease;
+}
+
+#sign-up-button a:hover {
+	font-size: 14px;
+	border-bottom: solid 1px;
+}
 
 /********* Global form styles *********/
 
@@ -103,24 +116,22 @@ input[type="text"]:focus {
 input[type="submit"] {
 	display: inline-block;
 	margin: 10px 0 20px 0;
-	border: solid 1px #A6FEFF;
 	height: 40px;
 	width: 30%;
 	border-radius: 5px;
 	font-size: 1em;
 	text-align: center;
-	background: white;
-	color: #A6FEFF;
+	background: black;
+	color: white;
 	font-family: inherit;
 }
 
 input[type="submit"]:hover {
 	transition: 1s;
-	background: #A6FEFF;
+	background: #019BD1;
 	color: white;
 	font-family: inherit;
 }
-
 
 /********* Current User Greeting *********/
 #welcome-user {

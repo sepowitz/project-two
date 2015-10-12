@@ -49,15 +49,8 @@ server.use(expressLayouts);
 
 
 
-// //------------------ THIS IS JUST A TEST -----------------------//
-// 	server.get('/this-is-just-a-secret/', function(req, res){
-// 		res.write("Welcome, friend!");
-// 		res.end();
-// 	});
-// //-------------------------------------------------------------//
 
-
-//Include controllers here
+//Controller delegation
 
 var userController = require('./controllers/user_controller.js');
 server.use('/users', userController);
