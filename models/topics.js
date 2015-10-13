@@ -1,20 +1,11 @@
 var mongoose = require('mongoose'),
 		Schema = mongoose.Schema;
 
-//This is a sub-document that will live in the Topic's posts array
-
-var postSchema = new Schema({
-	author: {type: Schema.Types.ObjectId, ref: 'User'},
-	title: {type: String, required: true},
-	content: {type: String, required: true },
-	rank: {type: Number, default: 0}
-}); 
-
 
 var topicSchema = new Schema({
 	topic: {type: String, required: true},
 	description: String,
-	posts: [postSchema],
+	posts: [{type:Schema.Types.ObjectId, ref: 'Post'}],
 }, {collection: 'topics', strict: true}); 
 
 

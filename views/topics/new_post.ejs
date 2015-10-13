@@ -1,0 +1,13 @@
+<h6 id="logout">log out</h6>
+<h5 id="welcome-user">watup, <span> <%= currentUser.username %></span> </h5>
+
+<div id="add-post">
+	<form action ='/<%=topic._id%>/post' method='post'>
+		<label>add a <%=topic.topic%> article</label>
+		<input  type = "text"
+				 		name = "post[title]"
+				 		placeholder = "title your article">
+		<textarea name='post[content]'></textarea>  
+		<input type="submit" value="submit article">
+	</form>
+</div>

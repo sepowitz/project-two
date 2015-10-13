@@ -1,6 +1,7 @@
 var express = require('express'),
 		router = express.Router(),
-		Topic = require('../models/topics.js');
+		Topic = require('../models/topics.js'),
+		Post = require('../models/posts.js');
 
 
 
@@ -31,7 +32,18 @@ router.get('/new', function(req, res){
 });
 
 //Add new post
-router.get('/:topicId/new_post')
+router.get('/:topicId/new_post', function(req, res){
+	Topic.findById(req.params.topicId, function(err, articleTopic){
+		if(err){
+			console.log('there was an error retrieving topic to add article to' + err)
+		} else {
+				res.render('topics/new_post', {
+				currentUser: req.session.currentUser,
+				topic: articleTopic
+			});
+		}
+	});
+});
 
 
 /*SHOW*/
@@ -68,8 +80,13 @@ router.post('/', function(req, res){
 });
 
 //Create new post
-router.post('/:topicId/', function(req, res){
-
+router.post('/:topicId/post', function(req, res){
+	req.body.post.author = req.session.currentUser.username;
+	console.log(req.body.post);
+	Topic.findById(req.params.topicId, function(err, postToTopic){
+		postToTopic.posts.insert(req.body.post);
+		postTopTopic.save
+	})
 });
 
 
