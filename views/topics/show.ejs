@@ -7,22 +7,3 @@
 	<p><%=topic.description%></p>
 </div>
 
-<% topic.posts.forEach(function(post, i){%>
-	<div class='post'>
-		<div class='attribution'>
-			<h4 class='post-title'><%=topic.posts.title%></h4>
-			<h5 class='post-author'><%=topic.posts.author%></h5>
-		</div>
-		<div class='vote'>
-			<form action='#' method="post">
-				<input type="submit" value="&uarr;">	
-			</form>
-			<form action="#" method="post">
-				<input type="submit" value="&darr;">	
-			</form>
-		</div>
-		<p class='post-content'>
-			<%=topic.posts.content%>
-		</p>
-	</div>
-<%})%>

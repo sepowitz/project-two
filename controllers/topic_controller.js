@@ -50,18 +50,18 @@ router.get('/:topicId/new_post', function(req, res){
 
 //Show topic and related posts
 router.get('/:topicId', function(req, res){
-	Topic.findById(req.params.topicId, function(err, chosenTopic){
-		if (err){
-			console.log('there was a problem displaying the chose topic page' + err)
+var thisTopic = Topic.findById(req.params.topicId);
+	Topic.findById(req.params.topicId).populate('posts').exec(function(err, post){
+		if(err){
+			console.log(err);
 		} else {
 			res.render('topics/show', {
 				currentUser: req.session.currentUser,
-				topic: chosenTopic
+				topic: thisTopic
 			})
 		}
-	})
+	}) 
 });
-
 
 
 /* CREATE */
@@ -82,10 +82,15 @@ router.post('/', function(req, res){
 //Create new post
 router.post('/:topicId/post', function(req, res){
 	req.body.post.author = req.session.currentUser.username;
-	console.log(req.body.post);
-	Topic.findById(req.params.topicId, function(err, postToTopic){
-		postToTopic.posts.insert(req.body.post);
-		postTopTopic.save
+
+	var newPost = Post(req.body.post);
+
+	newPost.save(function(err, postAdded){
+		if(err){
+			console.log('Trouble adding new post to topic' + err)
+		} else {
+			res.redirect(302, '/' + req.params.topicId);
+		}
 	})
 });
 

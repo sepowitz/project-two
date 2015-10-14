@@ -9,7 +9,7 @@ var postSchema = new Schema({
 	title: {type: String, required: true},
 	content: {type: String, required: true },
 	rank: {type: Number, default: 0}
-},{collection:'posts', strict:true}); 
+},{collection:'posts', strict:false}); 
 
 
 var Post = mongoose.model('Post', postSchema);

@@ -5,8 +5,8 @@ var mongoose = require('mongoose'),
 var topicSchema = new Schema({
 	topic: {type: String, required: true},
 	description: String,
-	posts: [{type:Schema.Types.ObjectId, ref: 'Post'}],
-}, {collection: 'topics', strict: true}); 
+	posts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
+}, {collection: 'topics', strict: false}); 
 
 
 var Topic = mongoose.model('Topic', topicSchema);
