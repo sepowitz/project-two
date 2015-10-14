@@ -47,6 +47,16 @@ router.post('/login', function(req, res){
 	});
 });
 
+router.get('/logout', function(req, res){
+	console.log(req.session.currentUser)
+	if(req.session.currentUser != null) {
+		req.session.currentUser.username = null;
+		req.session.currentUser.password = null;
+		console.log(req.session.currentUser);
+		res.render("users/login");
+	}
+});
+
 
 
 

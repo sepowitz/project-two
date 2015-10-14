@@ -1,4 +1,4 @@
-<h6 id="logout">log out</h6>
+<a href='users/logout'><h6 id="logout">log out</h6></a>
 <h5 id="welcome-user">watup, <span> <%= currentUser.username %></span> </h5>
 
 <!-- Current topic title and description -->
@@ -17,10 +17,10 @@
 		</div>
 		<div class='vote'>
 			<form action='#' method="post">
-				<input type="submit" value="&uarr;">	
+				<input class='up-vote' type="submit" value="&#9650;">	
 			</form>
 			<form action="#" method="post">
-				<input type="submit" value="&darr;">	
+				<input class='down-vote' type="submit" value="&#9660;">	
 			</form>
 		</div>
 		<p class='post-content'>

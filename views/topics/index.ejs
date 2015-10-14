@@ -1,11 +1,17 @@
-<h6 id="logout">log out</h6>
+<a href='users/logout'><h6 id="logout">log out</h6></a>
 <h5 id="welcome-user">watup, <span> <%= currentUser.username %></span> </h5>
 
 <div id="topic-grid">
 	<ul>
 		<a href='/new'<li id="add-topic-button">add a topic<span class='plus-sign'>+</span></li></a>
 		<% topic.forEach(function(topic, i) {%>
-		<a href='/<%= topic._id %>'><li><%=topic.topic%><span class='topic-count'><%= topic.posts.length %></span></li></a>
+			<% if(topic.posts.length <= 0) {%>
+			<a href='/<%= topic._id %>/new_post'><li><%=topic.topic%><span class='topic-count'><%= topic.posts.length %></span></li></a>
+		<%} else {%>
+			<a href='/<%= topic._id %>'><li><%=topic.topic%><span class='topic-count'><%= topic.posts.length %></span></li></a>
+		<%}%>
 		<%})%>
 	</ul>
 </div> 
+
+

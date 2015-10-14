@@ -43,11 +43,11 @@ object:hover {
 
 #logout {
 	position: fixed;
-	top: 5%;
+	top: 2%;
 	left: 90%;
 	font-size: .75rem;
 	border-bottom: solid 1px white;
-	padding: 0 5px 5px 2px;
+	width: 50%;
 	font-weight: lighter;
 	font-style: italic;
 	color: white;
@@ -296,6 +296,13 @@ h1:first-child {
 	line-height: 1.5em;
 }
 
+.up-vote:hover {
+	background: green !important;
+}
+
+.down-vote:hover {
+	background: red !important;
+}
 /********* ADD POST *********/
 
 #add-post {
