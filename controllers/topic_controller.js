@@ -50,17 +50,23 @@ router.get('/:topicId/new_post', function(req, res){
 
 //Show topic and related posts
 router.get('/:topicId', function(req, res){
-var thisTopic = Topic.findById(req.params.topicId);
-	Topic.findById(req.params.topicId).populate('posts').exec(function(err, post){
+	Topic.findById(req.params.topicId, function(err, currentTopic){
 		if(err){
 			console.log(err);
 		} else {
-			res.render('topics/show', {
-				currentUser: req.session.currentUser,
-				topic: thisTopic
+			Topic.findById(req.params.topicId).populate('posts').exec(function(err, post){
+				if(err){
+					console.log(err);
+				} else {
+					console.log(post);
+					res.render('topics/show', {
+						currentUser: req.session.currentUser,
+						topic: post
+					})
+				}
 			})
 		}
-	}) 
+	})
 });
 
 
@@ -89,11 +95,23 @@ router.post('/:topicId/post', function(req, res){
 		if(err){
 			console.log('Trouble adding new post to topic' + err)
 		} else {
-			res.redirect(302, '/' + req.params.topicId);
+			Topic.findById(req.params.topicId, function(err, topicToPostTo){
+				if(err){
+					console.log(err);
+				} else {
+					topicToPostTo.posts.push(postAdded);
+					topicToPostTo.save(function(err, updatedPost){
+						if(err){
+							console.log(err);
+						} else {
+							res.redirect(302, '/' + req.params.topicId);
+						}
+					})
+				}
+			})	
 		}
 	})
 });
-
 
 
 /* EDIT */
