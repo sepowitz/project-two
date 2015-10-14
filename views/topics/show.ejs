@@ -8,12 +8,12 @@
 </div>
 
 
-
+<a href='/<%=topic._id%>/new_post'><div class='add-post-button'>add an article <span class='plus-sign'>+</span></div></a>
 <% topic.posts.forEach(function(post, i){%>
 	<div class='post'>
 		<div class='attribution'>
 			<h4 class='post-title'><%=post.title%></h4>
-			<h5 class='post-author'><%=post.author%></h5>
+			<a href='/users/<%=post.author%>/posts'<h5 class='post-author'><%=post.author%></h5></a>
 		</div>
 		<div class='vote'>
 			<form action='#' method="post">

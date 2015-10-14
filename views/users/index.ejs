@@ -1,0 +1,19 @@
+<a href='users/logout'><h6 id="logout">log out</h6></a>
+<h5 id="welcome-user">watup, <span> <%= currentUser.username %></span> </h5>
+
+<!-- Current topic title and description -->
+<div id='show-topic'>
+	<h1><%=author%>'s articles</h1>
+</div>
+
+<% posts.forEach(function(post, i){%>
+	<div class='post'>
+		<div class='attribution' style="display: block !important; float: none;">
+			<h4 class='post-title'><%=post.title%></h4>
+			<h5 class='post-author'><%=post.author%></h5>
+		</div>
+		<p class='post-content'>
+			<%=post.content%>
+		</p>
+	</div>
+<%})%>

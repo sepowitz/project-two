@@ -21,23 +21,25 @@ header {
 	padding: 4%;
 }
 
-object {
+img {
 	border: solid 1px white;
 	padding: 20px;
 	position: absolute;
-
+	transition: 1s ease;
 }
 
-object:hover {
-	border: solid 2px white;
+img:hover {
+	border: solid 2px #019BD1;
 	padding: 25px;
-	transition: 1s;
 }
 
 #brand-logo {
 	width: 20%;
 }
 
+a {
+	text-decoration: none;
+}
 /********* Not sure what to call this yet *********/
 
 
@@ -51,7 +53,13 @@ object:hover {
 	font-weight: lighter;
 	font-style: italic;
 	color: white;
-	border-radius: 5%
+	border-radius: 5%;
+	transition: 1s ease;
+}
+
+#logout:hover {
+	border-color: #019BD1;
+	color: #019BD1;
 }
 
 
@@ -303,12 +311,28 @@ h1:first-child {
 .down-vote:hover {
 	background: red !important;
 }
+
+.add-post-button {
+	color: black;
+	border: solid 1px black;
+	display: inline-block;
+	padding: 5px 10px;
+	position: relative;
+	left: 10%;
+	top: 40px;
+	transition: 1s ease;
+}
+
+.add-post-button:hover {
+	background: black;
+	color: white;
+}
+
 /********* ADD POST *********/
 
 #add-post {
 	width: 50%;
 	margin: 100px auto;
-
 
 }
 #add-post textarea {

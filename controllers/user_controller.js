@@ -1,6 +1,7 @@
 var express = require('express'),
 		router = express.Router(),
-		User = require('../models/users.js');
+		User = require('../models/users.js'),
+		Post = require('../models/posts.js');
 
 
 /* NEW */
@@ -55,6 +56,20 @@ router.get('/logout', function(req, res){
 		console.log(req.session.currentUser);
 		res.render("users/login");
 	}
+});
+
+router.get('/:userName/posts', function(req, res ){
+	Post.find({author: req.params.userName}, function(err, userPosts){
+		if(err){
+			console.log('Trouble getting user posts' + err);
+		} else {
+			res.render('users/index', {
+				currentUser: req.session.currentUser,
+				posts: userPosts,
+				author: req.params.userName
+			})
+		}
+	})
 });
 
 
