@@ -13,7 +13,7 @@
 			<h5 class='post-author'><%=post.author%></h5>
 		</div>
 		<div class='vote'>
-			<form action='#' method="post">
+			<form action="/<%=post._id%>/edit" method="get">
 				<input class='up-vote' type="submit" value="edit">	
 			</form>
 			<form action="#" method="post">

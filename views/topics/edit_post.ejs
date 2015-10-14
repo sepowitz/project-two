@@ -1,0 +1,13 @@
+<a href='/users/logout'><h6 id="logout">log out</h6></a>
+<h5 id="welcome-user">watup, <span> <%= currentUser.username %></span> </h5>
+
+<div id="add-post">
+	<form action ='/<%=post._id%>/post' method='post'>
+		<label>edit this article</label>
+		<input  type = "text"
+				 		name = "post[title]"
+				 		value = "<%= post.title%>">
+		<textarea name='post[content]'><%= post.content %></textarea>  
+		<input type="submit" value="edit article">
+	</form>
+</div>

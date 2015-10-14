@@ -116,9 +116,18 @@ router.post('/:topicId/post', function(req, res){
 
 /* EDIT */
 
-//Edit topic 
-router.patch('/:topicId/edit', function(req, res){
-
+//Edit post form
+router.get('/:postId/edit', function(req, res){
+	Post.findById(req.params.postId,function(err, postToEdit){
+		if(err){
+			console.log('Trouble finding post to edit ' + err);
+		} else {
+			res.render('topics/edit_post', {
+				post: postToEdit,
+				currentUser: req.session.currentUser
+			})
+		}
+	})
 });
 
 //Edit post
