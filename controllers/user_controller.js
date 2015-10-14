@@ -58,32 +58,34 @@ router.get('/logout', function(req, res){
 	}
 });
 
-router.get('/:userName/posts', function(req, res ){
-	Post.find({author: req.params.userName}, function(err, userPosts){
-		if(err){
-			console.log('Trouble getting user posts' + err);
-		} else {
-			res.render('users/index', {
-				currentUser: req.session.currentUser,
-				posts: userPosts,
-				author: req.params.userName
-			})
-		}
-	})
+
+router.get('/:userName/posts', function(req, res){
+	if(req.params.userName === req.session.currentUser.username){
+		Post.find({author: req.params.userName}, function(err, currentUserPosts){
+			if(err){
+				console.log(err);
+			} else {
+				console.log(currentUserPosts);
+				res.render('users/show', {
+					currentUser: req.session.currentUser,
+					posts:currentUserPosts
+				})
+			}
+		})
+	} else {
+		Post.find({author: req.params.userName}, function(err, userPosts){
+			if(err){
+				console.log(err);
+			} else {
+				res.render('users/index', {
+					currentUser: req.session.currentUser,
+					posts: userPosts,
+					author: req.params.userName
+				})
+			}
+		})
+	}
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //Export router object

@@ -3,14 +3,22 @@
 
 <!-- Current topic title and description -->
 <div id='show-topic'>
-	<h1><%=author%>'s articles</h1>
+	<h1><%=currentUser.username%>'s articles</h1>
 </div>
 
 <% posts.forEach(function(post, i){%>
 	<div class='post'>
-		<div class='attribution' style="display: block !important; float: none;">
+		<div class='attribution'>
 			<h4 class='post-title'><%=post.title%></h4>
 			<h5 class='post-author'><%=post.author%></h5>
+		</div>
+		<div class='vote'>
+			<form action='#' method="post">
+				<input class='up-vote' type="submit" value="edit">	
+			</form>
+			<form action="#" method="post">
+				<input class='down-vote' type="submit" value="delete">	
+			</form>
 		</div>
 		<p class='post-content'>
 			<%=post.content%>
