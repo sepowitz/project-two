@@ -16,10 +16,10 @@
 			<a href='/users/<%=post.author%>/posts'<h5 class='post-author'><%=post.author%></h5></a>
 		</div>
 		<div class='vote'>
-			<form action='#' method="post">
+			<form action='/<%=topic._id%>/post/<%=post._id%>/upvote?_method=PATCH' method="post">
 				<input class='up-vote' type="submit" value="&#9650;">	
 			</form>
-			<form action="#" method="post">
+			<form action='/<%=topic._id%>/post/<%=post._id%>/downvote?_method=PATCH' method="post">
 				<input class='down-vote' type="submit" value="&#9660;">	
 			</form>
 		</div>

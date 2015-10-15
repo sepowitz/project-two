@@ -168,6 +168,33 @@ router.delete('/:postId/delete', function(req, res){
 	})
 });
 
+/* VOTING */
+
+//Upvote
+
+router.patch('/:topicId/post/:postId/upvote', function(req, res){
+	var upValue = 1;
+	Post.findByIdAndUpdate(req.params.postId, {$inc: {rank: upValue}}, function(err, upVotedPost){
+		if(err){
+			console.log(err);
+		} else {
+			res.redirect(302, '/' + req.params.topicId);
+		}
+	})
+});
+
+//Downvote
+
+router.patch('/:topicId/post/:postId/downvote', function(req, res){
+	var downValue = -1;
+	Post.findByIdAndUpdate(req.params.postId, {$inc: {rank: downValue}}, function(err, downVotedPost){
+		if(err){
+			console.log(err);
+		} else {
+			res.redirect(302, '/' + req.params.topicId);
+		}
+	})
+});
 
 //Export router object
 module.exports = router;
