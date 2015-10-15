@@ -16,7 +16,7 @@
 			<form action="/<%=post._id%>/edit" method="get">
 				<input class='up-vote' type="submit" value="edit">	
 			</form>
-			<form action="#" method="post">
+			<form action="/<%=post._id%>/delete?_method=DELETE" method="post">
 				<input class='down-vote' type="submit" value="delete">	
 			</form>
 		</div>

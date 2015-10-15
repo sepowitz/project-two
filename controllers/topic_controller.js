@@ -149,15 +149,23 @@ router.patch('/:postId/edit', function(req, res){
 
 /* DESTROY*/
 
-//Remove topic 
-router.delete('/:topicId', function(req, res){
-
-});
 
 //Remove post
-router.delete('/:topicId/post/:postId', function(req, res){
-
-
+router.delete('/:postId/delete', function(req, res){
+	var deletePost = req.params.postId;
+	Post.findByIdAndRemove(req.params.postId, function(err, deletedPost){
+		if(err){
+			console.log('Trouble deleting post ' + err);
+		} else {
+			Topic.update({}, {$pull: {'posts': {$in: [req.params.postId]}}}, function(err, deletePostFromTopic){
+				if(err){
+					console.log(err);
+				} else {
+					res.redirect(302, '/users/' + req.session.currentUser.username + '/posts');
+				}
+			})
+		}
+	})
 });
 
 
