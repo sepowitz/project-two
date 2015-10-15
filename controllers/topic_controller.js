@@ -54,7 +54,7 @@ router.get('/:topicId', function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			Topic.findById(req.params.topicId).populate('posts').exec(function(err, post){
+			Topic.findById(req.params.topicId).populate({path: 'posts', options: {sort: {'rank': -1}}}).exec(function(err, post){
 				if(err){
 					console.log(err);
 				} else {
