@@ -2,7 +2,7 @@
 <h5 id="welcome-user">watup, <span> <%= currentUser.username %></span> </h5>
 
 <div id="add-post">
-	<form action ='/<%=post._id%>/post' method='post'>
+	<form action ='/<%=post._id%>/edit?_method=PATCH' method='post'>
 		<label>edit this article</label>
 		<input  type = "text"
 				 		name = "post[title]"

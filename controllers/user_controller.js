@@ -22,7 +22,7 @@ router.post('/', function(req, res){
 		if(err){
 			console.log('Trouble adding new user' + err);
 		} else {
-			res.redirect(301, "users/login")
+			res.redirect(302, "users/login")
 		}
 
 	});
@@ -41,9 +41,9 @@ router.post('/login', function(req, res){
 	User.findOne({username: attempt.username }, function(err, user){
 		if(user && user.password === attempt.password){
 			req.session.currentUser = user;
-			res.redirect(301, "/")
+			res.redirect(302, "/")
 		} else {
-			res.redirect(301, "users/login")
+			res.redirect(302, "users/login")
 		}
 	});
 });

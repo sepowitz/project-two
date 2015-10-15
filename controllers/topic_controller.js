@@ -132,8 +132,16 @@ router.get('/:postId/edit', function(req, res){
 
 //Edit post
 
-router.patch('/:topicId/post/:postId/edit', function(req, res){
-
+router.patch('/:postId/edit', function(req, res){
+	var updatedTitle = req.body.post.title,
+			updatedContent = req.body.post.content;
+	Post.findByIdAndUpdate(req.params.postId, { title: updatedTitle, content: updatedContent }, function(err, postUpdated){
+		if(err){
+			console.log('Trouble editing post ' + err);
+		} else {
+			res.redirect(302, '/users/' + postUpdated.author + '/posts');
+		}
+	})
 });
 
 
