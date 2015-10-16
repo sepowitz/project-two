@@ -17,16 +17,16 @@ body {
 .github-logo {
 	border: none;
 	postion: fixed;
-	left: 90%;
-	bottom: -50%;
-	width: 5%;
+	left: 95%;
+	bottom: -100%;
+	width: 60px;
 }
 
 
 .github-logo:hover {
 	background: none;
 	border: none;
-	width: 8%;
+	width: 80px;
 }
 
 /********* GLOBAL STYLES *********/
@@ -387,6 +387,14 @@ h1:first-child {
 
 /********* MEDIA QUERIES *********/
 @media only screen and (max-width: 690px) {
+		.github-logo {
+			border: none;
+			postion: fixed;
+			left: 45%;
+			bottom: -70%;
+			width: 60px;
+		}
+
 		input[type='submit'] {
 			width: 100%;
 		}
