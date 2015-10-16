@@ -387,4 +387,7 @@ h1:first-child {
 		.vote form input[type='submit']{
 		width: 180%;
 		}
+		.post-content {
+		margin-top: 12px;
+}
 	}
