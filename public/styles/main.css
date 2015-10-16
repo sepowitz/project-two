@@ -391,10 +391,9 @@ h1:first-child {
 			border: none;
 			postion: fixed;
 			left: 45%;
-			bottom: -70%;
+			bottom: -50%;
 			width: 60px;
 		}
-
 		input[type='submit'] {
 			width: 100%;
 		}
