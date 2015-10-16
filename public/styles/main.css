@@ -54,7 +54,7 @@ a {
 }
 
 .current-user:hover {
-	color: #019BD1;
+	color: lightgray;
 }
 
 #logout {
@@ -389,5 +389,5 @@ h1:first-child {
 		}
 		.post-content {
 		margin-top: 12px;
-}
+		}
 	}
