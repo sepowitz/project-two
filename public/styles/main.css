@@ -16,9 +16,9 @@ body {
 
 .github-logo {
 	border: none;
-	postion: fixed;
+	position: fixed;
 	left: 95%;
-	bottom: -100%;
+	bottom: 0%;
 	width: 60px;
 }
 
@@ -391,7 +391,7 @@ h1:first-child {
 			border: none;
 			postion: fixed;
 			left: 45%;
-			bottom: -50%;
+			bottom: 0;
 			width: 60px;
 		}
 		input[type='submit'] {
