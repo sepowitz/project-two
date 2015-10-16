@@ -1,5 +1,5 @@
 <a href='users/logout'><h6 id="logout">log out</h6></a>
-<h5 id="welcome-user">watup, <span> <%= currentUser.username %></span> </h5>
+<h5 id="welcome-user">watup, <a href='/users/<%=currentUser.username%>/posts'><span class='current-user'> <%= currentUser.username %></span></a></h5>
 
 <div id="topic-grid">
 	<ul>

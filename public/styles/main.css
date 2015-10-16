@@ -23,6 +23,7 @@ header {
 	position: fixed;
 	top: 0;
 	height: 110px;
+	z-index: 1;
 }
 
 img {
@@ -47,6 +48,14 @@ a {
 }
 /********* Not sure what to call this yet *********/
 
+.current-user {
+	color: white;
+	transition: color 1s ease;
+}
+
+.current-user:hover {
+	color: #019BD1;
+}
 
 #logout {
 	position: fixed;
@@ -59,12 +68,13 @@ a {
 	font-style: italic;
 	color: white;
 	border-radius: 5%;
-	transition: 1s ease;
+	z-index: 2;
+	padding-bottom: 5px
 }
 
 #logout:hover {
-	border-color: #019BD1;
-	color: #019BD1;
+	border-color: lightgray;
+	color: lightgray;
 }
 
 
@@ -156,6 +166,7 @@ input[type="submit"]:hover {
 	font-weight: lighter;
 	letter-spacing: .3em;
 	color: white;
+	z-index: 2;
 }
 
 #welcome-user span {
@@ -358,3 +369,22 @@ h1:first-child {
 	font-size: 1em;
 	font-weight: lighter;
 }
+
+/********* MEDIA QUERIES *********/
+@media only screen and (max-width: 690px) {
+		input[type='submit'] {
+			width: 100%;
+		}
+		input[type='text'] {
+			width: 100%;
+		}
+		#sign-up-button {
+			margin-left: 40%;
+		}
+		.attribution {
+			width: 80%;
+		}
+		.vote form input[type='submit']{
+		width: 180%;
+		}
+	}
